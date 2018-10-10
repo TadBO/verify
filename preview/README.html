@@ -1,0 +1,154 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:README</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="verify-">verify 使用文档</h1>
+<ul>
+<li>verify是同时支持PC端与移动端的图片拖拽验证，并配合后台使用校验的插件</li>
+<li>verify目前是跟后台配合使用的插件，后期有时间补上其前端自己实现图片的处理</li>
+<li>效果如下</li>
+<li><p>pc端效果
+<img src="demo-pc.png" alt="avatar"> </p>
+</li>
+<li><p>移动端效果
+<img src="demo-app.png" alt="avatar"></p>
+</li>
+</ul>
+<h2 id="-">使用方法</h2>
+<ul>
+<li>1.引入verify-1.0.1.js</li>
+<li>2.使用 verify</li>
+</ul>
+<pre><code class="lang-javascript">let verify = new Verify({
+        imgUrl: &#39;1.json&#39;,
+        checkUrl: &#39;1.json&#39;,
+        callback: (data) =&gt; {
+
+        }
+    });
+
+</code></pre>
+<h3 id="-">相关参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:right">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>imgUrl</td>
+<td style="text-align:center">获取图片资源的请求地址</td>
+<td style="text-align:right">string</td>
+</tr>
+<tr>
+<td>checkUrl</td>
+<td style="text-align:center">检查是否通过验证的请求地址</td>
+<td style="text-align:right">string</td>
+</tr>
+<tr>
+<td>callback</td>
+<td style="text-align:center">通过验证后的回调函数</td>
+<td style="text-align:right">function</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">方法</h3>
+<pre><code class="lang-javascript">verify.showVerify();
+</code></pre>
+<h3 id="-">相关说明</h3>
+<ul>
+<li>1.关于后台返回的字段的问题</li>
+<li>2.请求图片资源返回的参数：{state: 0, data: {bgSrc: &#39;背景图片的src地址&#39;, moveSrc:&#39;要移动的图片src地址&#39;, posY: &#39;图片距离上面的高度&#39;, token: &#39;123456&#39;}, &#39;msg&#39;: &#39;successs&#39;}</li>
+<li><p>3.请求校验的参数： {left: 102}，返回参数：{state: 0, data: {}, &#39;msg&#39;: &#39;success&#39;}</p>
+</li>
+<li><p>4.使用方法showVerify()去显示verify插件</p>
+</li>
+</ul>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
